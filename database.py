@@ -1,5 +1,5 @@
 from ast import List
-from typing import Dict, Any, Optional
+from typing import List, Dict, Any, Optional
 
 pedidos: Dict[str, Dict[str, Any]] = {
     "pedido_001": {
@@ -213,19 +213,6 @@ def status_pedido(id_pedido: Optional[str] = None, cpf: Optional[str] = None) ->
         print("Erro: Por favor, forneça um 'id_pedido' ou um 'cpf'.")
 
     return pedidos_encontrados
-
-reclamacoes: Dict[str, Dict[str, Any]] = {}
-
-def nova_reclamação(id_pedido: Optional[str] = None, cpf:Optional[str]= None, reclamacao:Optional[str] = None)-> List[Dict[str, Any]]:
-    # recebe id_pedido, cpf, reclamacao em uma reclamação dentro do dict reclamações:
-    reclamacao: str = f"reclamacao_{reclamacoes.__len__ +1}"
-    reclamacoes.add(
-        reclamacao:{
-                  "id": f"PED{reclamacoes.__len__ +1}",
-                  "cpf": cpf,
-                  "reclamacao":reclamacao, 
-        })
-    return reclamacoes
 
 reclamacoes: Dict[str, Dict[str, Any]] = {}
 
